@@ -1,0 +1,24 @@
+<nav>
+  <ul>
+    <li>
+      <a href="/">Inicio</a>
+    </li>
+
+    <div class="categories" (click)="openNav()">
+      <a>Categorias</a>
+      <hr />
+      <div class="content hidden">
+        @for(category of categories ; track category.slug){
+        <li
+          class="categories-content"
+          (click)="navigateToCategory(category.slug)"
+        >
+          <a>
+            {{ category.name }}
+          </a>
+        </li>
+        }
+      </div>
+    </div>
+  </ul>
+</nav>

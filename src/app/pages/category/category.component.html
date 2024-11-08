@@ -1,0 +1,18 @@
+<section id="products">
+  <h1>Todos los productos de {{ products[0].category }}</h1>
+  <div class="products">
+    @for(product of products ; track product.id){
+    <div class="product">
+      <h4>{{ product.title }}</h4>
+      <img src="{{ product.thumbnail }}" alt="{{ product.title }}" />
+      <p>
+        Rating <span class="rating">{{ product.rating }}</span>
+      </p>
+      <h5>{{ product.price }} €</h5>
+      <button (click)="navigateToProduct(product.id)">
+        Ver detalles de producto
+      </button>
+    </div>
+    }
+  </div>
+</section>
