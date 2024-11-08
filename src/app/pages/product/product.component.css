@@ -27,7 +27,7 @@ img {
   object-fit: cover;
   padding: 0.5rem;
   border: 2px solid var(--primary);
-  box-shadow:2px 2px 0  var(--primary);
+  box-shadow: 2px 2px 0 var(--primary);
   border-radius: 5px;
 }
 
@@ -40,7 +40,7 @@ img {
   flex-direction: column;
   justify-content: space-between;
   height: 496px;
-  width: 400px;
+  width: 100%;
 
   & button {
     padding: 0.5rem;
@@ -82,7 +82,6 @@ h6 {
 .tags {
   display: flex;
   gap: 0.5rem;
-
 }
 
 small {
@@ -91,7 +90,7 @@ small {
   border-radius: 10px;
   background-color: var(--accent);
   border: 2px solid var(--primary);
-  box-shadow:2px 2px 0  var(--primary);
+  box-shadow: 2px 2px 0 var(--primary);
 }
 
 .description {
@@ -129,7 +128,8 @@ small {
   border: 2px solid var(--accent);
   border-radius: 5px;
   border: 2px solid var(--primary);
-  box-shadow:2px 2px 0  var(--primary);
+  box-shadow: 2px 2px 0 var(--primary);
+  margin: 0 auto;
 
   & p {
     font-size: 13px;
@@ -169,5 +169,11 @@ small {
 
   & span {
     font-weight: 600;
+  }
+}
+
+@media (width <= 768px) {
+  #product {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
