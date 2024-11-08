@@ -9,4 +9,12 @@ header {
 main {
   margin: 7rem auto;
   max-width: 1440px;
+  margin-top: 12rem;
+}
+
+footer {
+  width: 100%;
+  padding: 3rem;
+  background-color: var(--accent);
+  height: 162px;
 }

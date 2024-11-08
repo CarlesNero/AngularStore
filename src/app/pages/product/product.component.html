@@ -1,29 +1,64 @@
-<div id="product">
-  <div class="images">
-    <img src="{{ product.thumbnail }}" alt="" />
-    <div class="images-carousel">
-      @for(image of product.images ; track image){
-      <img class="img-principal" src="{{ image }}" alt="" />
-      }
+<div class="product-content">
+  <div id="product">
+    <div class="images">
+      <img src="{{ product.thumbnail }}" alt="" />
+      <div class="images-carousel">
+        @for(image of product.images ; track image){
+        <img class="img-principal" src="{{ image }}" alt="" />
+        }
+      </div>
+    </div>
+    <div class="info">
+      <div class="main-info">
+        <h4>
+          {{ product.title }}
+        </h4>
+        <h5>{{ product.brand }}</h5>
+        <h6>{{ product.category }}</h6>
+        <p>{{ product.price }} €</p>
+        <p>
+          Rating <span>{{ product.rating }}</span>
+        </p>
+        <p>
+          Stock <span>{{ product.stock }}</span> ud's
+        </p>
+        <p class="description">{{ product.description }}</p>
+      </div>
+      <button>Añadir al carrito</button>
+      <div class="additional-info">
+        <p>
+          Garantía <span>{{ product.warrantyInformation }}</span>
+        </p>
+        <p>
+          Tiempo de envío <span>{{ product.shippingInformation }}</span>
+        </p>
+        <p>
+          Disponibilidad <span>{{ product.availabilityStatus }}</span>
+        </p>
+        <div class="tags">
+          @for(tag of product.tags ; track tag){
+          <small>
+            {{ tag }}
+          </small>
+          }
+        </div>
+      </div>
     </div>
   </div>
-  <div class="info">
-    <h4>
-      {{ product.title }}
-    </h4>
-    <h5>{{ product.brand }}</h5>
-    <p>{{ product.price }} €</p>
-    <p>
-      Rating <span>{{ product.rating }}</span>
-    </p>
-    <p>
-      Stock <span>{{ product.stock }}</span> ud's
-    </p>
-    <div class="tags">
-      @for(tag of product.tags ; track tag){
-      <small>
-        {{ tag }}
-      </small>
+
+  <div id="reviews">
+    <h1>Reviews de nuestros usuarios</h1>
+    <div class="reviews">
+      @for(review of product.reviews; track review.reviewerName){
+      <div class="review">
+        <h2>{{ review.reviewerName }}</h2>
+        <p>{{ review.reviewerEmail }}</p>
+        <small>{{ review.date }}</small>
+        <div class="comment">
+          <h6>{{ review.rating }}</h6>
+          <p>{{ review.comment }}</p>
+        </div>
+      </div>
       }
     </div>
   </div>

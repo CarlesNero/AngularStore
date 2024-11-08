@@ -24,7 +24,8 @@
   flex-direction: column;
   gap: 0.5rem;
   text-align: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) inset;
+  border: 2px solid var(--primary);
+  box-shadow: 3px 3px 0 var(--primary);
 
   & img {
     width: 300px;
@@ -48,7 +49,6 @@
   background-color: var(--accent);
   color: var(primary);
   border-radius: 5px;
-  border: 0;
   font-weight: 600;
   cursor: pointer;
 }
@@ -56,6 +56,7 @@
 .more-products:active {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3) inset;
 }
+
 h5,
 button {
   color: var(--primary);
@@ -73,12 +74,15 @@ button {
   font-weight: 600;
   cursor: pointer;
   transition: 0.1s ease-in-out;
+  border: 2px solid var(--primary);
+  box-shadow: 2px 2px 0 var(--primary);
 }
 
 button:hover {
-  box-shadow: 2px 2px 2px var(--primary);
+  border: 2px solid var(--secondary);
+  box-shadow: 2px 2px 0 var(--secondary);
 }
 
 button:active {
-  box-shadow: 2px 2px 2px var(--primary) inset;
+  box-shadow: 2px 2px 0 var(--primary) inset;
 }

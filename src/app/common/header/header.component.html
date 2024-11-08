@@ -1,12 +1,12 @@
 <nav>
   <ul>
-    <li>
-      <a href="/">Inicio</a>
+    <li class="logo">
+      <img src="./assets/brand-appgallery.svg" alt="" /><a href="/">Inicio</a>
     </li>
 
     <div class="categories" (click)="openNav()">
       <a>Categorias</a>
-      <hr />
+      <!-- <hr /> -->
       <div class="content hidden">
         @for(category of categories ; track category.slug){
         <li
@@ -20,5 +20,6 @@
         }
       </div>
     </div>
+    <li class="cart"><img src="./assets/shopping-cart.svg" alt="" /></li>
   </ul>
 </nav>

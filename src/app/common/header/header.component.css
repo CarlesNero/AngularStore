@@ -2,6 +2,7 @@
   list-style-type: none;
   text-decoration: none;
   color: black;
+  padding: 0;
 }
 
 a {
@@ -18,11 +19,19 @@ nav {
   left: 15rem; */
 }
 
+.logo {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
 nav ul {
   display: flex;
   align-items: center;
   font-weight: 600;
-  gap: 5rem;
+  /*  gap: 5rem; */
+  justify-content: space-between;
+  position: relative;
 }
 
 a {
@@ -32,11 +41,56 @@ a {
 hr {
   border: 1px solid var(--primary);
   margin-top: 5px;
+  transition: transform 0.5s ease-in-out;
+  transform-origin: center;
+  margin: 0 auto;
+}
+
+@keyframes buttonRotation {
+  0% {
+    transform: rotate(0deg);
+    width: 100%;
+    opacity: 1;
+  }
+  50% {
+    transform: rotate(90deg);
+    width: 5px;
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(180deg);
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+.categories a {
+  padding: 0.5rem;
+  padding-inline: 1rem;
+  border-radius: 5px;
+  /* border-bottom: 2px solid var(--primary); */
+  transition: all 0.3s ease-in-out;
+}
+
+.categories a:hover {
+  /* border: 2px solid var(--primary); */
+  box-shadow: 2px 2px 0 var(--primary);
+  /*   animation: buttonRotation 0.5s ease-in-out; */
+}
+
+.categories a:active {
+  /* border: 2px solid var(--primary); */
+  box-shadow: 2px 2px 0 var(--primary) inset;
+  /*   animation: buttonRotation 0.5s ease-in-out; */
 }
 
 .categories {
-  position: relative;
+  position: absolute;
   justify-self: center;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  cursor: pointer;
 }
 
 .content {
@@ -44,12 +98,15 @@ hr {
   grid-template-columns: repeat(6, 1fr);
   position: absolute;
   background-color: white;
-  padding: 1rem;
+  padding: 3rem;
   gap: 1.5rem;
   column-gap: 3rem;
-  top: 2.5rem;
+  transform: translate(-50%, -50%);
+  top: 11.5rem;
+  left: 50%;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  width: 1266px;
 }
 
 .content li {
@@ -72,4 +129,8 @@ hr {
 
 .hidden {
   display: none;
+}
+
+.cart {
+  cursor: pointer;
 }
