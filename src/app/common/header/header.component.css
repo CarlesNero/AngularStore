@@ -46,24 +46,6 @@ hr {
   margin: 0 auto;
 }
 
-@keyframes buttonRotation {
-  0% {
-    transform: rotate(0deg);
-    width: 100%;
-    opacity: 1;
-  }
-  50% {
-    transform: rotate(90deg);
-    width: 5px;
-    opacity: 0;
-  }
-  100% {
-    transform: rotate(180deg);
-    width: 100%;
-    opacity: 1;
-  }
-}
-
 .categories a {
   padding: 0.5rem;
   padding-inline: 1rem;
@@ -110,14 +92,6 @@ hr {
   max-width: 1266px;
 }
 
-@media (width <= 1024px) {
-  .content {
-    grid-template-columns: repeat(2, 1fr);
-    margin: 0 auto;
-    top: 24rem;
-  }
-}
-
 .content li {
   transition: transform 0.3s ease-in-out;
 }
@@ -142,4 +116,42 @@ hr {
 
 .cart {
   cursor: pointer;
+}
+
+@media (width <= 1024px) {
+  .content {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 auto;
+    top: 24rem;
+  }
+}
+
+@media (width <= 768px) {
+  .content {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 auto;
+    top: 18rem;
+    gap: 0.5rem;
+  }
+
+  @media (width <= 320px) {
+    nav ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-weight: 600;
+      /*  gap: 5rem; */
+      justify-content: space-between;
+      position: relative;
+      gap: 2rem;
+      height: 100px;
+    }
+
+    .content {
+      grid-template-columns: repeat(1, 1fr);
+      margin: 0 auto;
+      top: 30rem;
+      gap: 0.5rem;
+    }
+  }
 }

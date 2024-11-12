@@ -31,6 +31,7 @@
     width: 300px;
     height: 100%;
     object-fit: cover;
+    margin: 0 auto;
   }
 
   & h4 {
@@ -87,20 +88,18 @@ button:active {
   box-shadow: 2px 2px 0 var(--primary) inset;
 }
 
+@media (width <= 1024px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (width <= 768px) {
   .products {
     grid-template-columns: 1fr;
   }
 
-  .categories {
+  /*   .categories {
     grid-template-columns: repeat(2, 1fr);
-  }
+  } */
 }
-
-@media (width <= 1024px) {
-  .products {
-    grid-template-columns: repeat(2,1fr);
-  }
-
-}
-
