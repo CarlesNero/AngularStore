@@ -15,6 +15,8 @@ export class ProductComponent implements OnInit {
   title: string = 'Angular Store || ';
   nombre: string = '';
   product: any;
+  date: any;
+  reviews: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -38,9 +40,25 @@ export class ProductComponent implements OnInit {
     try {
       const data = await this.api.fetchProductById(id);
       if (data) {
-        this.nombre = data.nombre;
+        this.nombre = data.title;
         this.product = data;
-        this.titleService.setTitle(`${this.title} ${this.nombre || id}`);
+        this.titleService.setTitle(`${this.title} ${this.nombre}`);
+        this.reviews = data.reviews;
+        console.log('fecha ' + this.reviews);
+        for (const review of this.reviews) {
+          // Assuming review.date is a Date object; if not, create a Date object like new Date(review.date)
+          const formattedDate = new Date(review.date).toLocaleDateString(
+            'en-GB',
+            {
+              day: '2-digit',
+              month: '2-digit',
+              year: 'numeric',
+            }
+          );
+          console.log(formattedDate); // Output in DD/MM/YYYY format
+        }
+
+        console.log(this.nombre);
         console.log(this.product);
       } else {
         console.error('Product data not found');
@@ -49,4 +67,13 @@ export class ProductComponent implements OnInit {
       console.error('Error fetching product details:', error);
     }
   }
+
+  formatDate(date: string | Date): string {
+    return new Date(date).toLocaleDateString('en-GB', {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric'
+    });
+  }
+
 }

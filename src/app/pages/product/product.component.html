@@ -53,7 +53,7 @@
       <div class="review">
         <h2>{{ review.reviewerName }}</h2>
         <p>{{ review.reviewerEmail }}</p>
-        <small>{{ review.date }}</small>
+        <small>{{ formatDate(review.date) }}</small>
         <div class="comment">
           <h6>{{ review.rating }}</h6>
           <p>{{ review.comment }}</p>
