@@ -4,7 +4,11 @@
     @for(product of products ; track product.id){
     <div class="product">
       <h4>{{ product.title }}</h4>
-      <img src="{{ product.thumbnail }}" alt="{{ product.title }}" />
+      <img
+        src="{{ product.thumbnail }}"
+        alt="{{ product.title }}"
+        [style.view-transition-name]="'transition-image' + product.id"
+      />
       <p>
         Rating <span class="rating">{{ product.rating }}</span>
       </p>

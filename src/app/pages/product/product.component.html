@@ -1,7 +1,12 @@
 <div class="product-content">
   <div id="product">
     <div class="images">
-      <img src="{{ product.thumbnail }}" alt="" />
+      <img
+        src="{{ product.thumbnail }}"
+        alt="{{ product.title }}"
+        [style.view-transition-name]="'transition-image' + product.id"
+      />
+      
       <div class="images-carousel">
         @for(image of product.images ; track image){
         <img class="img-principal" src="{{ image }}" alt="" />
