@@ -1,0 +1,17 @@
+# Nixpacks build (Node) + runtime (Nginx) con config SPA
+
+[phases.build]
+cmds = ["npm run build"]
+
+[start]
+cmd = "nginx -g 'daemon off;'"
+
+[static]
+# Usa nginx como runtime y copia el dist al docroot.
+# (Dokploy ya hace algo similar, pero aquí además metemos la config)
+output_dir = "dist/angular-store/browser"
+
+[[static.copies]]
+# Copia tu config al sitio correcto de Nginx
+from = "default.conf"
+to = "/etc/nginx/conf.d/default.conf"
